@@ -19,7 +19,7 @@ class CreateJawabanTable extends Migration
             $table->date("tanggal_dibuat");
             $table->date("tanggal_diperbaharui")->nullable();
             $table->bigInteger("pertanyaan_id")->unsigned();
-            $table->foreign("pertanyaan_id")->references("id")->on("pertanyaan");
+            $table->foreign("pertanyaan_id")->references("id")->on("pertanyaan")->onDelete('cascade');
             $table->timestamps();
         });
     }

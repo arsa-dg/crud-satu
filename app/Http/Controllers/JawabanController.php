@@ -12,8 +12,7 @@ class JawabanController extends Controller
         $jawaban = JawabanModel::get_all();
         $pertanyaan = PertanyaanModel::get_all();
         $compact = compact("jawaban", "pertanyaan");
-        // dd($compact);
-        return view("jawaban.index", compact("jawaban", "pertanyaan"));
+        return view("jawaban.index", $compact);
     }
 
     public function store(Request $request){

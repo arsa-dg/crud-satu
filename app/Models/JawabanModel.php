@@ -16,4 +16,10 @@ class JawabanModel {
         return $new_jawaban;
     }
     
+    public static function destroy($id){
+        $deleted = DB::table("jawaban")
+                        ->where("pertanyaan_id", $id)
+                        ->delete();
+        return $deleted;
+    }
 }
